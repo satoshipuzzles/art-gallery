@@ -19,20 +19,6 @@ export default function GalleryPage() {
       price: 699.99,
       imageUrl: '/images/placeholder2.jpg',
     },
-    {
-      id: '3',
-      title: 'Nature Study',
-      description: 'Detailed study of natural elements with rich textures.',
-      price: 599.99,
-      imageUrl: '/images/placeholder3.jpg',
-    },
-    {
-      id: '4',
-      title: 'Portrait Series',
-      description: 'Expressive portrait with bold color palette.',
-      price: 799.99,
-      imageUrl: '/images/placeholder4.jpg',
-    },
   ];
 
   return (
@@ -42,7 +28,7 @@ export default function GalleryPage() {
       <div className="container mx-auto px-4 py-12">
         <h1 className="text-4xl font-bold mb-8">Art Gallery</h1>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {artworks.map((artwork) => (
             <div key={artwork.id} className="card">
               <div className="h-64 bg-gray-200 flex items-center justify-center">

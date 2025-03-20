@@ -10,6 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// Minimal schema for MCP
 model User {
   id             String    @id @default(uuid())
   name           String
@@ -19,8 +20,6 @@ model User {
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
   artworks       Artwork[]
-  collections    Collection[]
-  orders         Order[]
 }
 
 model Artwork {
@@ -29,15 +28,10 @@ model Artwork {
   description    String
   price          Float
   imageUrl       String
-  model3dUrl     String?
-  available      Boolean   @default(true)
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
   userId         String
   user           User      @relation(fields: [userId], references: [id])
-  collectionId   String?
-  collection     Collection? @relation(fields: [collectionId], references: [id])
-  orderItems     OrderItem[]
 }
 
 model Collection {
